@@ -1,0 +1,178 @@
+{
+  "testId" : "2-report-cho-ui-check",
+  "name" : "Report cho UI check",
+  "report" : {
+    "nodes" : [ {
+      "name" : "New Customer Page",
+      "status" : "info",
+      "time" : 1492264689896,
+      "includedTags" : [ "desktop" ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "Banner",
+        "objects" : [ {
+          "name" : "listInputNewCustomer-1",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-10",
+            "highlight" : [ "listInputNewCustomer-1", "listInputNewCustomer-10" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-10",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-11",
+            "highlight" : [ "listInputNewCustomer-10", "listInputNewCustomer-11" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-11",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-2",
+            "highlight" : [ "listInputNewCustomer-11", "listInputNewCustomer-2" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-2",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-3",
+            "highlight" : [ "listInputNewCustomer-2", "listInputNewCustomer-3" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-3",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-4",
+            "highlight" : [ "listInputNewCustomer-3", "listInputNewCustomer-4" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-4",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-5",
+            "highlight" : [ "listInputNewCustomer-4", "listInputNewCustomer-5" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-5",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-6",
+            "highlight" : [ "listInputNewCustomer-5", "listInputNewCustomer-6" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-6",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-7",
+            "highlight" : [ "listInputNewCustomer-6", "listInputNewCustomer-7" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-7",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-8",
+            "highlight" : [ "listInputNewCustomer-7", "listInputNewCustomer-8" ]
+          } ]
+        }, {
+          "name" : "listInputNewCustomer-8",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "aligned vertically all listInputNewCustomer-9",
+            "highlight" : [ "listInputNewCustomer-8", "listInputNewCustomer-9" ]
+          } ]
+        }, {
+          "name" : "addNewText",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/newCustomePageUI.gspec",
+              "lineNumber" : 17
+            },
+            "name" : "color-scheme < 90% white,  < 10% #4b781e",
+            "highlight" : [ "addNewText" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "listInputNewCustomer-1" : {
+          "area" : [ 506, 222, 138, 27 ]
+        },
+        "addNewText" : {
+          "area" : [ 507, 192, 335, 23 ]
+        },
+        "listInputNewCustomer-2" : {
+          "area" : [ 506, 251, 138, 24 ]
+        },
+        "listInputNewCustomer-5" : {
+          "area" : [ 506, 414, 138, 27 ]
+        },
+        "listInputNewCustomer-6" : {
+          "area" : [ 506, 443, 138, 27 ]
+        },
+        "listInputNewCustomer-10" : {
+          "area" : [ 506, 559, 138, 27 ]
+        },
+        "listInputNewCustomer-3" : {
+          "area" : [ 506, 277, 138, 30 ]
+        },
+        "listInputNewCustomer-11" : {
+          "area" : [ 506, 588, 138, 27 ]
+        },
+        "listInputNewCustomer-4" : {
+          "area" : [ 506, 309, 138, 103 ]
+        },
+        "listInputNewCustomer-9" : {
+          "area" : [ 506, 530, 138, 27 ]
+        },
+        "listInputNewCustomer-7" : {
+          "area" : [ 506, 472, 138, 27 ]
+        },
+        "listInputNewCustomer-8" : {
+          "area" : [ 506, 501, 138, 27 ]
+        }
+      },
+      "screenshot" : "layout-5-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+}

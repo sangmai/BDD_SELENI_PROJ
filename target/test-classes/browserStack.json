@@ -1,0 +1,17 @@
+{
+	"server": "hub-cloud.browserstack.com",
+	"user": "sangxuanmai1",
+	"key": "oqwZ4qS9ZDcTymL2DzUD",
+	"capabilities": {
+		"browserstack.debug": true
+	},
+	"environments": {
+		"bs": {
+			"os": "Windows",
+			"os_version": "7",
+			"browser": "IE",
+			"browser_version": "8.0",
+			"resolution": "1024x768"
+		}
+	}
+}

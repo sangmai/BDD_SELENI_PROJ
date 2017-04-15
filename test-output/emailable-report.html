@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Run on Chrome</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">41.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Run on Chrome &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">com.guru.testcases.LoginTest</td><td><a href="#m1"><b>TC_01_CreateNewCustomerAccountAndGetID</b>  </a></td><td class="numi">1</td><td>1492264685279</td><td class="numi">17859</td></tr>
+<tr><th colspan="4">Run on Chrome &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="2">com.guru.testcases.LoginTest</td><td><a href="#m2"><b>TC_03_AddNewAccountAndGetAccountID</b>  </a></td><td class="numi">1</td><td>1492264703163</td><td class="numi">6020</td></tr><tr class="passedodd"><td><a href="#m3"><b>TC_04_TransferMoneyIntoCurrentAccount</b>  </a></td><td class="numi">1</td><td>1492264709204</td><td class="numi">8165</td></tr>
+</table>
+<h1>Run on Chrome</h1>
+<h2 id="m1">com.guru.testcases.LoginTest:TC_01_CreateNewCustomerAccountAndGetID</h2>
+<div style="padding-left:3em">
+<h3>Test Messages</h3>
+2017-04-15 20:58:05,284 INFO  LoginTest - Check UI Home Page
+<br/>
+2017-04-15 20:58:07,469 INFO  LoginTest - TC_01 - Step 01: Go to New Customer Page
+<br/>
+2017-04-15 20:58:08,863 INFO  LoginTest - TC_01 - Check UI New Customer Page
+<br/>
+2017-04-15 20:58:09,896 INFO  LoginTest - TC_01 - Step 02: Input 'CUSTOMER NAME'
+<br/>
+2017-04-15 20:58:11,212 INFO  LoginTest - TC_01 - Step 03: Choose 'GENDER'
+<br/>
+2017-04-15 20:58:12,352 INFO  LoginTest - TC_01 - Step 04: Input 'DATE OF BIRTH'
+<br/>
+2017-04-15 20:58:13,534 INFO  LoginTest - TC_01 - Step 05: Input 'ADDRESS'
+<br/>
+2017-04-15 20:58:14,736 INFO  LoginTest - TC_01 - Step 06: Input 'CITY'
+<br/>
+2017-04-15 20:58:15,905 INFO  LoginTest - TC_01 - Step 07: Input 'STATE'
+<br/>
+2017-04-15 20:58:17,076 INFO  LoginTest - TC_01 - Step 08: Input 'PIN'
+<br/>
+2017-04-15 20:58:18,238 INFO  LoginTest - TC_01 - Step 09: Input 'MOBILE'
+<br/>
+2017-04-15 20:58:19,408 INFO  LoginTest - TC_01 - Step 10: Input 'EMAIL'
+<br/>
+2017-04-15 20:58:20,610 INFO  LoginTest - TC_01 - Step 11: Input 'PASSWORD'
+<br/>
+2017-04-15 20:58:21,763 INFO  LoginTest - TC_01 - Step 12: Click 'SUBMIT' button
+<br/>
+2017-04-15 20:58:22,894 INFO  LoginTest - TC_01 - Step 13: Get value 'CUSTOMER ID'
+<br/>
+2017-04-15 20:58:23,070 INFO  LoginTest - TC_01 - Step 14: Verify message displayed
+<br/>
+2017-04-15 20:58:23,138 INFO  LoginTest - ==Verify condition is PASSED==
+<br/>
+<h3>Failure</h3>
+<p>Layout test failed</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at common.AbstractPage.checkUIpage(AbstractPage.java:82)
+<br/>at demoGuruPages.HomePage.checkUI(HomePage.java:22)
+<br/>at com.guru.testcases.LoginTest.TC_01_CreateNewCustomerAccountAndGetID(LoginTest.java:88)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.guru.testcases.LoginTest:TC_04_TransferMoneyIntoCurrentAccount</h2>
+<div style="padding-left:3em">
+2017-04-15 20:58:29,204 INFO  LoginTest - Running TC_04: Transfer money into a current account and check account balance equal 55,000
+<br/>
+2017-04-15 20:58:29,204 INFO  LoginTest - TC_04 - Step 01: Go to Deposite Page
+<br/>
+2017-04-15 20:58:31,791 INFO  LoginTest - TC_04 - Step 02: Input 'ACCOUNT NUMBER'
+<br/>
+2017-04-15 20:58:33,946 INFO  LoginTest - TC_04 - Step 03: Input 'AMOUNT'
+<br/>
+2017-04-15 20:58:35,131 INFO  LoginTest - TC_04 - Step 04: Input 'DESCRIPTION'
+<br/>
+2017-04-15 20:58:36,282 INFO  LoginTest - TC_04 - Step 05: Click 'SUBMIT' button
+<br/>
+2017-04-15 20:58:37,121 INFO  LoginTest - TC_04 - Step 06: Verify message displays
+<br/>
+2017-04-15 20:58:37,174 INFO  LoginTest - ==Verify condition is PASSED==
+<br/>
+2017-04-15 20:58:37,174 INFO  LoginTest - TC_04 - Step 07: Verify 'AMOUNT CREDITED' equal 5,000
+<br/>
+2017-04-15 20:58:37,269 INFO  LoginTest - ==Verify condition is PASSED==
+<br/>
+2017-04-15 20:58:37,269 INFO  LoginTest - TC_04 - Step 08: Verify 'CURRENT BALANCE' equal 55,000
+<br/>
+2017-04-15 20:58:37,369 INFO  LoginTest - ==Verify condition is PASSED==
+<br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">com.guru.testcases.LoginTest:TC_03_AddNewAccountAndGetAccountID</h2>
+<div style="padding-left:3em">
+2017-04-15 20:58:23,164 INFO  LoginTest - Running TC_03: Add new account and check created successfully, then verify 'Current Amount' and 'Initial Deposit' are equal
+<br/>
+2017-04-15 20:58:23,164 INFO  LoginTest - TC_03 - Step 01: Go to New Account Page
+<br/>
+2017-04-15 20:58:25,612 INFO  LoginTest - TC_03 - Step 02: Input 'CUSTOMER NAME'
+<br/>
+2017-04-15 20:58:26,762 INFO  LoginTest - TC_03 - Step 03: Select 'CUSTOMER NAME'
+<br/>
+2017-04-15 20:58:26,908 INFO  LoginTest - TC_03 - Step 04: Input 'INITIAL DEPOSIT'
+<br/>
+2017-04-15 20:58:28,064 INFO  LoginTest - TC_03 - Step 05: Click 'SUBMIT' button
+<br/>
+2017-04-15 20:58:28,941 INFO  LoginTest - TC_03 - Step 06: Verify message displays with content 'Account Generated Successfully!!!'
+<br/>
+2017-04-15 20:58:29,007 INFO  LoginTest - ==Verify condition is PASSED==
+<br/>
+2017-04-15 20:58:29,007 INFO  LoginTest - TC_03 - Step 07: Get value 'ACCOUNT ID'
+<br/>
+2017-04-15 20:58:29,100 INFO  LoginTest - TC_03 - Step 08: Verify 'CURRENT AMOUNT' and 'INITIAL DEPOSIT' are equal
+<br/>
+2017-04-15 20:58:29,183 INFO  LoginTest - ==Verify condition is PASSED==
+<br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

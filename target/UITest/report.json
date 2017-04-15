@@ -1,0 +1,31 @@
+{
+  "tests" : [ {
+    "name" : "Report cho UI check",
+    "startedAt" : 1492264687466,
+    "endedAt" : 1492264687466,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 18,
+      "errors" : 5,
+      "warnings" : 0,
+      "total" : 23
+    },
+    "testId" : "1-report-cho-ui-check",
+    "duration" : 0,
+    "failed" : true
+  }, {
+    "name" : "Report cho UI check",
+    "startedAt" : 1492264689896,
+    "endedAt" : 1492264689896,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 11,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 11
+    },
+    "testId" : "2-report-cho-ui-check",
+    "duration" : 0,
+    "failed" : false
+  } ]
+}

@@ -1,0 +1,35 @@
+@objects
+	header				css		.barone
+	bannerLink-*		xpath	//ul[@class='menusubnav']//li[not(contains(.,'Manager'))]
+	managerBanner		css 	.orange
+	imgHomepage			xpath 	//table[@class='layout']//center/img[3]
+	managerIDText		xpath	//tr[@class='heading3']//following-sibling::td
+	welcomeText			css		.heading3
+#Home Page 
+
+= Banner = 
+	@on desktop
+		header:
+			inside screen 20px top
+			color-scheme > 90% #f89b51
+			height 50px
+			
+			
+		@forEach [bannerLink-*] as bannerItem, next as nextItem
+			${bannerItem}:
+				aligned vertically all ${nextItem}	
+					
+		managerBanner:
+			color-scheme > 90% #f89b51
+			aligned vertically all ${nextItem}
+			
+		imgHomepage:
+			image file 2.png, error 10%
+			
+		managerIDText:
+			text is "Manger Id :"
+			color-scheme > 90% #4b781e
+			
+		welcomeText:
+			text is "Welcome To Manager's Page of Guru99 Bank"
+			color-scheme > 90%  #4b781e

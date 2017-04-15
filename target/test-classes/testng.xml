@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="5" parallel="false">
+	<listeners>
+		<listener class-name="common.MethodListener" />
+		<listener class-name="common.TestAnnotationTransformerListener" />
+		<listener class-name="common.ExcelReportListener" />
+		<listener class-name="common.ExtentTestNGITestListener" />
+		<listener class-name="common.ExtentTestNGIReporterListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+	<test name="Run on Chrome">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class name="com.guru.testcases.LoginTest" />
+		</classes>
+	</test>
+	<!-- <test name="Run on IE"> <parameter name="browser" value="IE" /> <classes> 
+		<class name="com.guru.testcases.LoginTest" /> </classes> </test> -->
+	<!-- Test -->
+</suite> <!-- Suite -->

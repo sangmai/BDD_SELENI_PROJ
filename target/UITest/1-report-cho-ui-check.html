@@ -1,0 +1,532 @@
+<html>
+    <head>
+        <title>Galen Reports</title>
+        <link rel="stylesheet" type="text/css" href="report.css"></link>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="handlebars-v2.0.0.js"></script>
+        <script src="galen-report.js"></script>
+        <script>
+var reportData = {
+  "testId" : "1-report-cho-ui-check",
+  "name" : "Report cho UI check",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Home Page",
+      "status" : "error",
+      "time" : 1492264687467,
+      "includedTags" : [ "desktop" ],
+      "excludedTags" : [ ],
+      "sections" : [ {
+        "name" : "Banner",
+        "objects" : [ {
+          "name" : "header",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 13
+            },
+            "name" : "inside screen 20px top",
+            "highlight" : [ "header", "screen" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 14
+            },
+            "name" : "color-scheme > 90% #f89b51",
+            "highlight" : [ "header" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 15
+            },
+            "name" : "height 50px",
+            "highlight" : [ "header" ]
+          } ]
+        }, {
+          "name" : "bannerLink-1",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-10",
+            "highlight" : [ "bannerLink-1", "bannerLink-10" ]
+          } ]
+        }, {
+          "name" : "bannerLink-10",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-11",
+            "highlight" : [ "bannerLink-10", "bannerLink-11" ]
+          } ]
+        }, {
+          "name" : "bannerLink-11",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-12",
+            "highlight" : [ "bannerLink-11", "bannerLink-12" ]
+          } ]
+        }, {
+          "name" : "bannerLink-12",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-13",
+            "highlight" : [ "bannerLink-12", "bannerLink-13" ]
+          } ]
+        }, {
+          "name" : "bannerLink-13",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-14",
+            "highlight" : [ "bannerLink-13", "bannerLink-14" ]
+          } ]
+        }, {
+          "name" : "bannerLink-14",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-2",
+            "highlight" : [ "bannerLink-14", "bannerLink-2" ]
+          } ]
+        }, {
+          "name" : "bannerLink-2",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-3",
+            "highlight" : [ "bannerLink-2", "bannerLink-3" ]
+          } ]
+        }, {
+          "name" : "bannerLink-3",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-4",
+            "highlight" : [ "bannerLink-3", "bannerLink-4" ]
+          } ]
+        }, {
+          "name" : "bannerLink-4",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-5",
+            "highlight" : [ "bannerLink-4", "bannerLink-5" ]
+          } ]
+        }, {
+          "name" : "bannerLink-5",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-6",
+            "highlight" : [ "bannerLink-5", "bannerLink-6" ]
+          } ]
+        }, {
+          "name" : "bannerLink-6",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-7",
+            "highlight" : [ "bannerLink-6", "bannerLink-7" ]
+          } ]
+        }, {
+          "name" : "bannerLink-7",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-8",
+            "highlight" : [ "bannerLink-7", "bannerLink-8" ]
+          } ]
+        }, {
+          "name" : "bannerLink-8",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 20
+            },
+            "name" : "aligned vertically all bannerLink-9",
+            "highlight" : [ "bannerLink-8", "bannerLink-9" ]
+          } ]
+        }, {
+          "name" : "managerBanner",
+          "specs" : [ {
+            "status" : "error",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 23
+            },
+            "name" : "color-scheme > 90% #f89b51",
+            "errors" : [ "color #f89b51 on \"managerBanner\" is 88% but it should be greater than 90%" ],
+            "highlight" : [ "managerBanner" ]
+          }, {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 24
+            },
+            "name" : "aligned vertically all bannerLink-9",
+            "highlight" : [ "managerBanner", "bannerLink-9" ]
+          } ]
+        }, {
+          "name" : "imgHomepage",
+          "specs" : [ {
+            "status" : "error",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 27
+            },
+            "name" : "image file 2.png, error 10%",
+            "errors" : [ "Element does not look like \"src\\test\\resources\\2.png\". There are 37.533643259114264% mismatching pixels but max allowed is 10.0%" ],
+            "highlight" : [ "imgHomepage" ],
+            "imageComparison" : {
+              "actualImage" : "layout-2-imgHomepage-actual.png",
+              "expectedImage" : "layout-3-imgHomepage-expected.png",
+              "comparisonMapImage" : "layout-4-imgHomepage-map.png"
+            }
+          } ]
+        }, {
+          "name" : "managerIDText",
+          "specs" : [ {
+            "status" : "error",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 30
+            },
+            "name" : "text is \"Manger Id :\"",
+            "errors" : [ "\"managerIDText\" text is \"Manger Id : mngr73146\" but should be \"Manger Id :\"" ],
+            "highlight" : [ "managerIDText" ]
+          }, {
+            "status" : "error",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 31
+            },
+            "name" : "color-scheme > 90% #4b781e",
+            "errors" : [ "color #4b781e on \"managerIDText\" is 0% but it should be greater than 90%" ],
+            "highlight" : [ "managerIDText" ]
+          } ]
+        }, {
+          "name" : "welcomeText",
+          "specs" : [ {
+            "status" : "info",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 34
+            },
+            "name" : "text is \"Welcome To Manager's Page of Guru99 Bank\"",
+            "highlight" : [ "welcomeText" ]
+          }, {
+            "status" : "error",
+            "place" : {
+              "filePath" : "src/test/resources/homepage.gspec",
+              "lineNumber" : 35
+            },
+            "name" : "color-scheme > 90%  #4b781e",
+            "errors" : [ "color #4b781e on \"welcomeText\" is 4% but it should be greater than 90%" ],
+            "highlight" : [ "welcomeText" ]
+          } ]
+        } ]
+      } ],
+      "objects" : {
+        "bannerLink-6" : {
+          "area" : [ 28, 324, 200, 39 ]
+        },
+        "screen" : {
+          "area" : [ 0, 0, 1349, 726 ]
+        },
+        "bannerLink-5" : {
+          "area" : [ 28, 285, 200, 39 ]
+        },
+        "welcomeText" : {
+          "area" : [ 214, 255, 921, 23 ]
+        },
+        "bannerLink-4" : {
+          "area" : [ 28, 246, 200, 39 ]
+        },
+        "bannerLink-3" : {
+          "area" : [ 28, 207, 200, 39 ]
+        },
+        "bannerLink-2" : {
+          "area" : [ 28, 168, 200, 39 ]
+        },
+        "bannerLink-1" : {
+          "area" : [ 28, 129, 200, 39 ]
+        },
+        "bannerLink-11" : {
+          "area" : [ 28, 519, 200, 39 ]
+        },
+        "bannerLink-10" : {
+          "area" : [ 28, 480, 200, 39 ]
+        },
+        "bannerLink-9" : {
+          "area" : [ 28, 441, 200, 39 ]
+        },
+        "bannerLink-8" : {
+          "area" : [ 28, 402, 200, 39 ]
+        },
+        "imgHomepage" : {
+          "area" : [ 704, 109, 67, 61 ]
+        },
+        "bannerLink-7" : {
+          "area" : [ 28, 363, 200, 39 ]
+        },
+        "header" : {
+          "area" : [ 28, 20, 1293, 50 ]
+        },
+        "managerIDText" : {
+          "area" : [ 213, 281, 923, 24 ]
+        },
+        "managerBanner" : {
+          "area" : [ 28, 90, 200, 39 ]
+        },
+        "bannerLink-14" : {
+          "area" : [ 28, 654, 200, 39 ]
+        },
+        "bannerLink-13" : {
+          "area" : [ 28, 597, 200, 57 ]
+        },
+        "bannerLink-12" : {
+          "area" : [ 28, 558, 200, 39 ]
+        }
+      },
+      "screenshot" : "layout-1-screenshot.png",
+      "type" : "layout"
+    } ]
+  }
+};
+        </script>
+        <script>
+
+            $(function () {
+                var galenReport = createGalenReport();
+                galenReport.render("main", reportData);
+            });
+        </script>
+    </head>
+    <body>
+        <script id="report-tpl" type="text/x-handlebars-template">
+            <ul class="report-nodes">
+            {{#each report.nodes}}
+                {{renderNode this}}
+            {{/each}}
+            </ul>
+        </script>
+        <script id="report-node-tpl" type="text/x-handlebars-template">
+            <li>
+                <span class="report-time">{{formatReportTime time}}</span>
+                <a class="expand-link node-expand-button node-status-{{status}} contains-children-{{hasChildElements nodes}} collapsed" href="#">{{status}}</a>
+                <div class="node-name node-status-{{status}}">{{name}}</div>
+                {{#if stacktrace}}
+                    <div class="stacktrace">{{stacktrace}}</div>
+                {{/if}}
+                {{#if attachments}}
+                    <ul class="report-node-attachments">
+                        {{#each attachments}}
+                            <li>
+                                <a class="icon-sprite-before node-attachment" href="{{this}}">{{this}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                <div class="node-details expand-container">
+                    {{#if nodes}}
+                        <ul class="report-nodes">
+                            {{#each nodes}}
+                                {{renderNode this}}
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                </div>
+            </li>
+        </script>
+        <script id="report-node-text-tpl" type="text/x-handlebars-template">
+            <li>
+                <div class="node-simple-text">
+                    {{name}}
+                </div>
+            </li>
+        </script>
+        <script id="report-layout-tpl" type="text/x-handlebars-template">
+            <li>
+                <span class="report-time">{{formatReportTime time}}</span>
+                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">LAYOUT</a>
+                <div class="node-name">{{name}}</div>
+                <div class="node-details expand-container">
+                    {{renderSublayout this}}
+                </div>
+            </li>
+        </script>
+        <script id="report-layout-sublayout-tpl" type="text/x-handlebars-template">
+            <div class="layout-report" data-layout-id="{{layoutId}}" data-screenshot="{{screenshot}}">
+                <ul class="layout-sections">
+                    {{#each sections}}
+                        {{renderLayoutSection this}}
+                    {{/each}}
+                </ul>
+            </div>
+        </script>
+        <script id="report-layout-section-tpl" type="text/x-handlebars-template">
+            <li>
+                <a class="layout-section icon-sprite-before expand-link contains-children-true" href="#">{{name}}</a>
+                <div class="layout-details expand-container">
+                    {{#if sections}}
+                        <ul class="layout-sections">
+                        {{#each sections}}
+                            {{renderLayoutSection this}}
+                        {{/each}}
+                        </ul>
+                    {{/if}}
+                    {{#if objects}}
+                        <ul class="layout-objects">
+                            {{#each objects}}
+                                {{renderLayoutObject this}}
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                </div>
+            </li>
+        </script>
+        
+        <script id="report-layout-object-tpl" type="text/x-handlebars-template">
+            <li>
+                <a class="layout-object icon-sprite-before expand-link contains-children-true" href="#">{{name}}</a>
+                <ul class="layout-checks expand-container">
+                    {{#each specs}}
+                        {{renderLayoutCheck this}}
+                    {{/each}}
+                    {{#each specGroups}}
+                    <li>
+                        <a class="layout-specgroup icon-sprite-before expand-link contains-children-true" href="#">{{name}}</a>
+                        <ul class="layout-checks expand-container">
+                            {{#each specs}}
+                                {{renderLayoutCheck this}}
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+            </li>
+        </script>
+        <script id="report-layout-check-tpl" type="text/x-handlebars-template">
+            <li>
+            <a class="layout-check icon-sprite-before layout-check-status-{{status}}" href="#" 
+                data-highlight-objects="{{commaSeparated highlight}}"
+                title="{{place.filePath}}#{{place.lineNumber}}"
+                >{{name}}</a>
+
+                {{#if errors}}
+                    <div class="layout-check-error-message">
+                        {{#if imageComparison}}
+                        <a class="image-comparison-link" 
+                            data-actual-image="{{imageComparison.actualImage}}"
+                            data-expected-image="{{imageComparison.expectedImage}}"
+                            data-map-image="{{imageComparison.comparisonMapImage}}"
+                            href="#">Show image comparison</a>
+                        {{/if}}
+                        <div class="layout-check-error-message-text">
+                            <ul>
+                            {{#each errors}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                {{/if}}
+
+                {{#if subLayout}}
+                    {{renderSublayout subLayout}}
+                {{/if}}
+            </li>
+        </script>
+        <script id="screenshot-popup-tpl" type="text/x-handlebars-template">
+            <div class="screenshot-canvas">
+                <img src="{{screenshot}}"/>
+                {{#each objects}}
+                <div class="canvas-rect" style="left: {{area.left}}px; top: {{area.top}}px; width: {{area.width}}px; height: {{area.height}}px; border-color: {{color}};">
+                    <div class="canvas-rect-wrapper">
+                        <div class="canvas-rect-hint" style="background: {{color}};">{{@key}}</div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+        <script id="image-comparison-tpl" type="text/x-handlebars-template">
+            <div class="image-comparison">
+                <h5>Actual</h5>
+                <img src="{{actual}}"/>
+
+                <h5>Expected</h5>
+                <img src="{{expected}}"/>
+
+                <h5>Comparison map</h5>
+                <img src="{{map}}"/>
+            </div>
+        </script>
+
+
+        <div id="menu">
+            <ul>
+                <li><a class="menu-op-expand-all" href="#">Expand All</a></li>
+                <li><a class="menu-op-collapse-all" href="#">Collapse All</a></li>
+                <li><a class="menu-op-expand-errors" href="#">Expand Errors</a></li>
+            </ul>
+        </div>
+        <h2>Report cho UI check</h2>
+        <div id="main"></div>
+        <div id="screen-shadow"></div>
+        <div id="popup" class="popup">
+            <div class="popup-wrapper">
+                <a class="popup-close-link" href="#">close</a>
+                <div class="popup-content"></div>
+            </div>
+        </div>
+        <div id="notification" class="notification">
+            <div class="notification-wrapper">
+                <a class="notification-close-link" href="#">close</a>
+                <div class="notification-summary"></div>
+                <div class="notification-message"></div>
+            </div>
+        </div>
+    </body>
+</html>

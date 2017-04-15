@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="browser" value="Chrome"/>
+  <listeners>
+    <listener class-name="common.MethodListener"/>
+    <listener class-name="common.TestAnnotationTransformerListener"/>
+    <listener class-name="common.ExcelReportListener"/>
+    <listener class-name="common.ExtentTestNGITestListener"/>
+    <listener class-name="common.ExtentTestNGIReporterListener"/>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Run on Chrome(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="com.guru.testcases.LoginTest">
+        <methods>
+          <include name="setupAfterSuite"/>
+          <include name="setup"/>
+          <include name="TC_01_CreateNewCustomerAccountAndGetID"/>
+        </methods>
+      </class> <!-- com.guru.testcases.LoginTest -->
+    </classes>
+  </test> <!-- Run on Chrome(failed) -->
+</suite> <!-- Failed suite [Suite] -->
