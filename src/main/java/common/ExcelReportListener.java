@@ -17,16 +17,67 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class ExcelReportListener implements IInvokedMethodListener {
+public class ExcelReportListener implements IInvokedMethodListener, ITestListener {
 	Map<String, ArrayList<String>> allDataAfterTest = new HashMap<String, ArrayList<String>>();
 	private static HSSFWorkbook excelBook;
 	private static HSSFSheet excelSheet;
+	private static HSSFSheet excelSheet1;
 	private static final Log log = LogFactory.getLog(ExcelReportListener.class);
 
 	@Override
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onFinish(ITestContext context) {
+		// TODO Auto-generated method stub
+		setCellData(context);
+	}
+
+	@Override
 	public void afterInvocation(IInvokedMethod method, ITestResult result) {
+		// TODO Auto-generated method stub
+		addDataAfterTest(method, result);
+		// setCellData();
+	}
+
+	private void addDataAfterTest(IInvokedMethod method, ITestResult result) {
 		// TODO Auto-generated method stub
 		ArrayList<String> dataAfterTest = new ArrayList<String>();
 		String timeStartRun = getTime(result.getStartMillis());
@@ -60,7 +111,6 @@ public class ExcelReportListener implements IInvokedMethodListener {
 			e.printStackTrace();
 		}
 
-		setCellData();
 	}
 
 	@Override
@@ -68,36 +118,42 @@ public class ExcelReportListener implements IInvokedMethodListener {
 		// TODO Auto-generated method stub
 	}
 
-	private void setCellData() {
+	private void setCellData(ITestContext context) {
 		try {
 			FileInputStream file = new FileInputStream(new File(Constant.reportFilePath));
 			excelBook = new HSSFWorkbook(file);
 			excelSheet = excelBook.getSheet("Test");
-			int lastRowNum = excelSheet.getLastRowNum();
+			excelSheet1 = excelBook.getSheetAt(1);
+//			excelSheet1.set
+			int lastRowNum = excelSheet1.getLastRowNum();
 			// Read row Excel
 			for (int i = 1; i <= lastRowNum; i++) {
-				log.info("row " + i);
 				// Set cell
 				String testCaseName = excelSheet.getRow(i).getCell(0).getStringCellValue();
-				Cell platformCellValue = excelSheet.getRow(i).getCell(1);
-				Cell resultCellValue = excelSheet.getRow(i).getCell(2);
-				Cell exceptionCell = excelSheet.getRow(i).getCell(3);
-				Cell timeToRunCell = excelSheet.getRow(i).getCell(4);
+				Cell platformCellValue = excelSheet1.getRow(i).getCell(1);
+				Cell resultCellValue = excelSheet1.getRow(i).getCell(2);
+				Cell exceptionCell = excelSheet1.getRow(i).getCell(3);
+				Cell timeToRunCell = excelSheet1.getRow(i).getCell(4);
 				// Read dataAfterTest
 				for (Map.Entry<String, ArrayList<String>> entry : allDataAfterTest.entrySet()) {
 					if (entry.getKey().equals(testCaseName)) {
-						if (platformCellValue.getStringCellValue().equals("")) {
-							log.info("platformCell is empty");
-							// Set excel values
+//						if (platformCellValue.getStringCellValue().isEmpty()) {
+//							System.out.println("platformCell is empty");
+//							// Set excel values
 							resultCellValue.setCellValue(entry.getValue().get(0));
 							platformCellValue.setCellValue(entry.getValue().get(1));
 							exceptionCell.setCellValue(entry.getValue().get(2));
 							timeToRunCell.setCellValue(entry.getValue().get(3));
-						}
-						log.info("platformCell is used");
-						// Insert new row between
-						addNewRow(excelSheet, i, lastRowNum);
-						log.info("Add Row");
+//						} else {
+//							System.out.println("platformCell is used");
+//							excelSheet.shiftRows(i + 1, lastRowNum, 1);
+//							Row newRow = excelSheet.createRow(i);
+////							Row newRow = excelSheet.getRow(i + 1);
+//							Cell newCell = newRow.createCell(0);
+//							newCell.setCellValue(testCaseName);
+//							System.out.println("Doing write cell");
+//							break;
+//						}
 					}
 				}
 			}
@@ -113,6 +169,7 @@ public class ExcelReportListener implements IInvokedMethodListener {
 
 	private void addNewRow(HSSFSheet excelSheet, int rowIndex, int lastRowNum) {
 		// TODO Auto-generated method stub
+		// excelSheet.shiftRows(rowIndex + 1, lastRowNum, 1);
 		if (rowIndex >= 0 && rowIndex < lastRowNum) {
 			excelSheet.shiftRows(rowIndex + 1, lastRowNum, 1);
 		}
@@ -130,4 +187,5 @@ public class ExcelReportListener implements IInvokedMethodListener {
 		calendar.setTimeInMillis(millis);
 		return format.format(calendar.getTime());
 	}
+
 }

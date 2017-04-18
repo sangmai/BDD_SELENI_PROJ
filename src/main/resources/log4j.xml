@@ -29,7 +29,6 @@
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
-
 	<root>
 		<priority value="warn" />
 	</root>

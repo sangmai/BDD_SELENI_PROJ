@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="13.728" tests="3" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="42.156" tests="3" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_77\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\sangmai\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf577479259681120979.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\sangmai\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2767576781381910126.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_77\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_121/bin/server;C:/Program Files/Java/jre1.8.0_121/bin;C:/Program Files/Java/jre1.8.0_121/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\nodejs\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;D:\apache-maven-3.3.9\bin;C:\Program Files\Git\cmd;C:\Users\sangmai\AppData\Local\Microsoft\WindowsApps;;C:\Users\sangmai\Desktop;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -60,34 +60,36 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="TC_01_CreateNewCustomerAccountAndGetID" classname="com.guru.testcases.LoginTest" time="2.55">
+  <testcase name="TC_01_CreateNewCustomerAccountAndGetID" classname="com.guru.testcases.LoginTest" time="17.513">
     <failure message="Layout test failed" type="java.lang.AssertionError">java.lang.AssertionError: Layout test failed
-	at com.guru.testcases.LoginTest.TC_01_CreateNewCustomerAccountAndGetID(LoginTest.java:82)
+	at com.guru.testcases.LoginTest.TC_01_CreateNewCustomerAccountAndGetID(LoginTest.java:88)
 </failure>
     <system-out><![CDATA[TC_04_TransferMoneyIntoCurrentAccount is running
 TC_03_AddNewAccountAndGetAccountID is running
 TC_01_CreateNewCustomerAccountAndGetID is running
-2017-04-14 22:09:28,519 INFO  LoginTest - Pre-condition - Step 01: Login to HomePage
-2017-04-14 22:09:31,866 INFO  LoginTest - Check UI Home Page
+2017-04-15 22:23:29,381 INFO  LoginTest - Pre-condition - Step 01: Login to HomePage
+2017-04-15 22:23:32,670 INFO  LoginTest - Check UI Home Page
+2017-04-15 22:23:34,829 INFO  LoginTest - TC_01 - Step 01: Go to New Customer Page
+2017-04-15 22:23:36,226 INFO  LoginTest - TC_01 - Check UI New Customer Page
+2017-04-15 22:23:37,159 INFO  LoginTest - TC_01 - Step 02: Input 'CUSTOMER NAME'
+2017-04-15 22:23:38,374 INFO  LoginTest - TC_01 - Step 03: Choose 'GENDER'
+2017-04-15 22:23:39,508 INFO  LoginTest - TC_01 - Step 04: Input 'DATE OF BIRTH'
+2017-04-15 22:23:40,678 INFO  LoginTest - TC_01 - Step 05: Input 'ADDRESS'
+2017-04-15 22:23:41,861 INFO  LoginTest - TC_01 - Step 06: Input 'CITY'
+2017-04-15 22:23:43,013 INFO  LoginTest - TC_01 - Step 07: Input 'STATE'
+2017-04-15 22:23:44,187 INFO  LoginTest - TC_01 - Step 08: Input 'PIN'
+2017-04-15 22:23:45,339 INFO  LoginTest - TC_01 - Step 09: Input 'MOBILE'
+2017-04-15 22:23:46,507 INFO  LoginTest - TC_01 - Step 10: Input 'EMAIL'
+2017-04-15 22:23:47,724 INFO  LoginTest - TC_01 - Step 11: Input 'PASSWORD'
+2017-04-15 22:23:48,884 INFO  LoginTest - TC_01 - Step 12: Click 'SUBMIT' button
+2017-04-15 22:23:49,995 INFO  LoginTest - TC_01 - Step 13: Get value 'CUSTOMER ID'
+2017-04-15 22:23:50,096 INFO  LoginTest - TC_01 - Step 14: Verify message displayed
+2017-04-15 22:23:50,166 INFO  LoginTest - ==Verify condition is PASSED==
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 2.28.455520 (cc17746adff54984afff480136733114c6b3704b) on port 4900
+    <system-err><![CDATA[Starting ChromeDriver 2.28.455520 (cc17746adff54984afff480136733114c6b3704b) on port 45280
 Only local connections are allowed.
 ]]></system-err>
   </testcase>
-  <testcase name="TC_03_AddNewAccountAndGetAccountID" classname="com.guru.testcases.LoginTest" time="0.016">
-    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
-	at com.guru.testcases.LoginTest.TC_03_AddNewAccountAndGetAccountID(LoginTest.java:178)
-</failure>
-    <system-out><![CDATA[2017-04-14 22:09:34,427 INFO  LoginTest - Running TC_03: Add new account and check created successfully, then verify 'Current Amount' and 'Initial Deposit' are equal
-2017-04-14 22:09:34,427 INFO  LoginTest - TC_03 - Step 01: Go to New Account Page
-]]></system-out>
-  </testcase>
-  <testcase name="TC_04_TransferMoneyIntoCurrentAccount" classname="com.guru.testcases.LoginTest" time="0.014">
-    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
-	at com.guru.testcases.LoginTest.TC_04_TransferMoneyIntoCurrentAccount(LoginTest.java:208)
-</failure>
-    <system-out><![CDATA[2017-04-14 22:09:34,446 INFO  LoginTest - Running TC_04: Transfer money into a current account and check account balance equal 55,000
-2017-04-14 22:09:34,446 INFO  LoginTest - TC_04 - Step 01: Go to Deposite Page
-]]></system-out>
-  </testcase>
+  <testcase name="TC_03_AddNewAccountAndGetAccountID" classname="com.guru.testcases.LoginTest" time="5.92"/>
+  <testcase name="TC_04_TransferMoneyIntoCurrentAccount" classname="com.guru.testcases.LoginTest" time="8.171"/>
 </testsuite>

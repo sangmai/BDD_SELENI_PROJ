@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="32.044">
+           time="31.322">
   <properties />
-            <testcase name="TC_01_CreateNewCustomerAccountAndGetID" time="17.859" classname="com.guru.testcases.LoginTest">
+            <testcase name="TC_01_CreateNewCustomerAccountAndGetID" time="17.485" classname="com.guru.testcases.LoginTest">
                 <failure type="java.lang.AssertionError"
                   message="Layout test failed"
               >
@@ -45,7 +45,7 @@
           </testcase>
   
   
-            <testcase name="TC_04_TransferMoneyIntoCurrentAccount" time="8.165" classname="com.guru.testcases.LoginTest" />
-                <testcase name="TC_03_AddNewAccountAndGetAccountID" time="6.020" classname="com.guru.testcases.LoginTest" />
+            <testcase name="TC_04_TransferMoneyIntoCurrentAccount" time="7.891" classname="com.guru.testcases.LoginTest" />
+                <testcase name="TC_03_AddNewAccountAndGetAccountID" time="5.946" classname="com.guru.testcases.LoginTest" />
       
 </testsuite>

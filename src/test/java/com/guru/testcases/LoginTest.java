@@ -317,7 +317,6 @@ public class LoginTest extends AbstractTest {
 
 	@AfterClass(alwaysRun = true)
 	public void setupAfterSuite() {
-		// close the browser
 		generateUIReport(tests);
 		closeBrowser(driver);
 

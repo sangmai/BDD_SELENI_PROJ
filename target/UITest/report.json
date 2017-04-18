@@ -1,8 +1,8 @@
 {
   "tests" : [ {
     "name" : "Report cho UI check",
-    "startedAt" : 1492264687466,
-    "endedAt" : 1492264687466,
+    "startedAt" : 1492533717715,
+    "endedAt" : 1492533717715,
     "failed" : true,
     "statistic" : {
       "passed" : 18,
@@ -15,8 +15,8 @@
     "failed" : true
   }, {
     "name" : "Report cho UI check",
-    "startedAt" : 1492264689896,
-    "endedAt" : 1492264689896,
+    "startedAt" : 1492533720061,
+    "endedAt" : 1492533720061,
     "failed" : false,
     "statistic" : {
       "passed" : 11,
