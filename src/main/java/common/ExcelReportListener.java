@@ -150,6 +150,12 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 							exceptionCell.setCellValue(entry.getValue().get(2));
 							timeToRunCell.setCellValue(entry.getValue().get(3));
 						} else {
+							while (i < lastRowNum
+									&& excelSheet.getRow(i).getCell(0).toString()
+											.equals(excelSheet.getRow(i + 1).getCell(0).toString())
+									&& !excelSheet.getRow(i + 1).getCell(1).getStringCellValue().isEmpty()) {
+								i++;
+							}
 
 							// Add more row
 							excelSheet.shiftRows(i + 1, lastRowNum, 1);
@@ -169,6 +175,7 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 							dup = true;
 							break;
 						}
+
 					}
 				}
 			}
