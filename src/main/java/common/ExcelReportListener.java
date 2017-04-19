@@ -25,7 +25,6 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 	Map<String, ArrayList<String>> allDataAfterTest = new HashMap<String, ArrayList<String>>();
 	private static HSSFWorkbook excelBook;
 	private static HSSFSheet excelSheet;
-	private static HSSFSheet excelSheet1;
 	private static final Log log = LogFactory.getLog(ExcelReportListener.class);
 
 	@Override
@@ -123,37 +122,37 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 			FileInputStream file = new FileInputStream(new File(Constant.reportFilePath));
 			excelBook = new HSSFWorkbook(file);
 			excelSheet = excelBook.getSheet("Test");
-			excelSheet1 = excelBook.getSheetAt(1);
-//			excelSheet1.set
-			int lastRowNum = excelSheet1.getLastRowNum();
+			int lastRowNum = excelSheet.getLastRowNum();
 			// Read row Excel
 			for (int i = 1; i <= lastRowNum; i++) {
 				// Set cell
 				String testCaseName = excelSheet.getRow(i).getCell(0).getStringCellValue();
-				Cell platformCellValue = excelSheet1.getRow(i).getCell(1);
-				Cell resultCellValue = excelSheet1.getRow(i).getCell(2);
-				Cell exceptionCell = excelSheet1.getRow(i).getCell(3);
-				Cell timeToRunCell = excelSheet1.getRow(i).getCell(4);
+				Cell platformCellValue = excelSheet.getRow(i).getCell(1);
+				Cell resultCellValue = excelSheet.getRow(i).getCell(2);
+				Cell exceptionCell = excelSheet.getRow(i).getCell(3);
+				Cell timeToRunCell = excelSheet.getRow(i).getCell(4);
 				// Read dataAfterTest
 				for (Map.Entry<String, ArrayList<String>> entry : allDataAfterTest.entrySet()) {
 					if (entry.getKey().equals(testCaseName)) {
-//						if (platformCellValue.getStringCellValue().isEmpty()) {
-//							System.out.println("platformCell is empty");
-//							// Set excel values
+						System.out.println(testCaseName);
+						if (platformCellValue.getStringCellValue().isEmpty()) {
+							// // Set excel values
 							resultCellValue.setCellValue(entry.getValue().get(0));
 							platformCellValue.setCellValue(entry.getValue().get(1));
 							exceptionCell.setCellValue(entry.getValue().get(2));
 							timeToRunCell.setCellValue(entry.getValue().get(3));
-//						} else {
-//							System.out.println("platformCell is used");
-//							excelSheet.shiftRows(i + 1, lastRowNum, 1);
-//							Row newRow = excelSheet.createRow(i);
-////							Row newRow = excelSheet.getRow(i + 1);
-//							Cell newCell = newRow.createCell(0);
-//							newCell.setCellValue(testCaseName);
-//							System.out.println("Doing write cell");
-//							break;
-//						}
+						} else {
+							excelSheet.shiftRows(i + 1, lastRowNum, 1);
+							Row newRow = excelSheet.createRow(i + 1);
+							Cell newTestCaseCell = newRow.createCell(0);
+							newTestCaseCell.setCellValue(testCaseName);
+							System.out.println(newTestCaseCell.getStringCellValue());
+							for (int j = 1; j <= 4; j++) {
+								newRow.createCell(j);
+							}
+							lastRowNum = excelSheet.getLastRowNum();
+							break;
+						}
 					}
 				}
 			}
@@ -164,20 +163,6 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 
 		} catch (Exception e) {
 			System.out.print(e.getMessage());
-		}
-	}
-
-	private void addNewRow(HSSFSheet excelSheet, int rowIndex, int lastRowNum) {
-		// TODO Auto-generated method stub
-		// excelSheet.shiftRows(rowIndex + 1, lastRowNum, 1);
-		if (rowIndex >= 0 && rowIndex < lastRowNum) {
-			excelSheet.shiftRows(rowIndex + 1, lastRowNum, 1);
-		}
-		if (rowIndex == lastRowNum) {
-			Row addRow = excelSheet.getRow(rowIndex);
-			if (addRow != null) {
-				excelSheet.createRow(addRow.getRowNum());
-			}
 		}
 	}
 
