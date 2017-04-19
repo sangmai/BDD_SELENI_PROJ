@@ -27,11 +27,8 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 	Map<String, ArrayList<String>> allDataAfterTest = new HashMap<String, ArrayList<String>>();
 	private static HSSFWorkbook excelBook;
 	private static HSSFSheet excelSheet;
-	private static HSSFCell testCaseName;
-	private static HSSFCell platformCellValue;
-	private static HSSFCell resultCellValue;
-	private static HSSFCell exceptionCell;
-	private static HSSFCell timeToRunCell;
+	private static HSSFCell testCaseName, platformCellValue, resultCellValue, exceptionCell, timeToRunCell;
+
 	private static final Log log = LogFactory.getLog(ExcelReportListener.class);
 
 	@Override
@@ -130,6 +127,7 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 			excelBook = new HSSFWorkbook(file);
 			excelSheet = excelBook.getSheet("Test");
 			int lastRowNum = excelSheet.getLastRowNum();
+			boolean dup = false;
 			// Read row Excel
 			for (int i = 1; i <= lastRowNum; i++) {
 				// Set cell
@@ -138,38 +136,44 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 				resultCellValue = excelSheet.getRow(i).getCell(2);
 				exceptionCell = excelSheet.getRow(i).getCell(3);
 				timeToRunCell = excelSheet.getRow(i).getCell(4);
+
 				// Read dataAfterTest
 				for (Map.Entry<String, ArrayList<String>> entry : allDataAfterTest.entrySet()) {
 					if (entry.getKey().equals(testCaseName.getStringCellValue())) {
+
 						// Check platform
-						int dem = 0;
 						if (platformCellValue.getStringCellValue().isEmpty()) {
+
 							// Set excel values
 							resultCellValue.setCellValue(entry.getValue().get(0));
 							platformCellValue.setCellValue(entry.getValue().get(1));
 							exceptionCell.setCellValue(entry.getValue().get(2));
 							timeToRunCell.setCellValue(entry.getValue().get(3));
-							dem++;
 						} else {
+
 							// Add more row
 							excelSheet.shiftRows(i + 1, lastRowNum, 1);
 							Row newRow = excelSheet.createRow(i + 1);
+
 							// Copy testcase to new Cell
 							Cell newTestCaseCell = newRow.createCell(0);
 							newTestCaseCell.setCellValue(testCaseName.getStringCellValue());
+
 							// Add new Cell
 							for (int j = 1; j <= 4; j++) {
 								newRow.createCell(j);
 							}
+
 							// Update last row number
 							lastRowNum = excelSheet.getLastRowNum();
+							dup = true;
 							break;
-						}
-						if (dem != 0) {
-							mergeCell(excelSheet, i - 1, i);
 						}
 					}
 				}
+			}
+			if (dup == true) {
+				mergeCell(excelSheet);
 			}
 			FileOutputStream fileOut = new FileOutputStream(new File(Constant.reportFilePath));
 			excelBook.write(fileOut);
@@ -181,12 +185,27 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 		}
 	}
 
-	private void mergeCell(HSSFSheet excelSheet, int firstRow, int lastRow) {
-		excelSheet.addMergedRegion(new CellRangeAddress(firstRow, // first row
-				lastRow, // last row (0-based)
-				0, // first column (0-based)
-				0 // last column (0-based)
-		));
+	private static void mergeCell(HSSFSheet excelSheet) {
+		int first = 1;
+		int last = 1;
+		int i = 1;
+		while (i < excelSheet.getPhysicalNumberOfRows()) {
+			first = i;
+			last = i;
+			for (int j = i + 1; j < excelSheet.getPhysicalNumberOfRows(); j++) {
+				Cell cell = excelSheet.getRow(i).getCell(0);
+				Cell newcell = excelSheet.getRow(j).getCell(0);
+				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+					if (cell.getRichStringCellValue().getString().trim().equals(newcell.toString())) {
+						last = j;
+					}
+				}
+			}
+			if (first != last) {
+				excelSheet.addMergedRegion(new CellRangeAddress(first, last, 0, 0));
+			}
+			i = last + 1;
+		}
 	}
 
 	private String getTime(long millis) {
