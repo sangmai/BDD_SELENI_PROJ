@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -82,9 +83,9 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 
 	private void addDataAfterTest(IInvokedMethod method, ITestResult result) {
 		// TODO Auto-generated method stub
-		ArrayList<String> dataAfterTest = new ArrayList<String>();
-		String timeStartRun = getTime(result.getStartMillis());
-		String timeToRun = timeStartRun + " Take time: "
+		final ArrayList<String> dataAfterTest = new ArrayList<String>();
+		final String timeStartRun = getTime(result.getStartMillis());
+		final String timeToRun = timeStartRun + " Take time: "
 				+ String.valueOf(TimeUnit.MILLISECONDS.toSeconds(result.getEndMillis() - result.getStartMillis()))
 				+ "s";
 		try {
@@ -109,7 +110,7 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 				dataAfterTest.add(timeToRun);
 				allDataAfterTest.put(method.getTestMethod().getMethodName(), dataAfterTest);
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			log.info("\nLog Message::@AfterMethod: Exception caught");
 			e.printStackTrace();
 		}
@@ -123,7 +124,7 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 
 	private void setCellData(ITestContext context) {
 		try {
-			FileInputStream file = new FileInputStream(new File(Constant.reportFilePath));
+			final FileInputStream file = new FileInputStream(new File(Constant.reportFilePath));
 			excelBook = new HSSFWorkbook(file);
 			excelSheet = excelBook.getSheet("Test");
 			int lastRowNum = excelSheet.getLastRowNum();
@@ -138,7 +139,7 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 				timeToRunCell = excelSheet.getRow(i).getCell(4);
 
 				// Read dataAfterTest
-				for (Map.Entry<String, ArrayList<String>> entry : allDataAfterTest.entrySet()) {
+				for (final Map.Entry<String, ArrayList<String>> entry : allDataAfterTest.entrySet()) {
 					if (entry.getKey().equals(testCaseName.getStringCellValue())) {
 
 						// Check platform
@@ -159,10 +160,10 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 
 							// Add more row
 							excelSheet.shiftRows(i + 1, lastRowNum, 1);
-							Row newRow = excelSheet.createRow(i + 1);
+							final Row newRow = excelSheet.createRow(i + 1);
 
 							// Copy testcase to new Cell
-							Cell newTestCaseCell = newRow.createCell(0);
+							final Cell newTestCaseCell = newRow.createCell(0);
 							newTestCaseCell.setCellValue(testCaseName.getStringCellValue());
 
 							// Add new Cell
@@ -182,17 +183,21 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 			if (dup == true) {
 				mergeCell(excelSheet);
 			}
-			FileOutputStream fileOut = new FileOutputStream(new File(Constant.reportFilePath));
+			final FileOutputStream fileOut = new FileOutputStream(new File(Constant.reportFilePath));
 			excelBook.write(fileOut);
 			fileOut.flush();
 			fileOut.close();
 
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			System.out.print(e.getMessage());
 		}
 	}
 
 	private static void mergeCell(HSSFSheet excelSheet) {
+		// Unmerge cell before
+		for (int i = excelSheet.getNumMergedRegions() - 1; i >= 0; i--) {
+			excelSheet.removeMergedRegion(i);
+		}
 		int first = 1;
 		int last = 1;
 		int i = 1;
@@ -200,8 +205,8 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 			first = i;
 			last = i;
 			for (int j = i + 1; j < excelSheet.getPhysicalNumberOfRows(); j++) {
-				Cell cell = excelSheet.getRow(i).getCell(0);
-				Cell newcell = excelSheet.getRow(j).getCell(0);
+				final Cell cell = excelSheet.getRow(i).getCell(0);
+				final Cell newcell = excelSheet.getRow(j).getCell(0);
 				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 					if (cell.getRichStringCellValue().getString().trim().equals(newcell.toString())) {
 						last = j;
@@ -216,8 +221,8 @@ public class ExcelReportListener implements IInvokedMethodListener, ITestListene
 	}
 
 	private String getTime(long millis) {
-		Calendar calendar = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+		final Calendar calendar = Calendar.getInstance();
+		final SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
 		calendar.setTimeInMillis(millis);
 		return format.format(calendar.getTime());
 	}
